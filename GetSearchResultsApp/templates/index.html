@@ -1,0 +1,118 @@
+<!-- extend from base header.html -->
+
+{% extends "templates/header.html" %}
+
+{% block content %}
+    <div class="banner-search">
+      <form action="{{ url_for('home') }}" method="post" name="search_property_form" enctype = "multipart/form-data">
+          {{ form.hidden_tag() }}
+
+            <div class="container">
+                <!-- banner -->
+                <h3>Buy, Sale & Rent</h3>
+                <div class="searchbar">
+                  <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+						{{form.address(size=32, value="property number, street name")}}
+						{{form.city(size=15, value="city")}}
+                      <div class="row">
+                        <div class="col-lg-7 col-sm-10">
+							{{form.states}}
+                            {{form.types}}
+                            {{form.prices}}
+                        </div>
+                        <div class="col-lg-3 col-sm-4">
+                            <input class="btn btn-success" type="submit" value="Find Now">
+                        </div>
+                      </div>
+                      </div>
+                      <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
+                      <p>Join now and get updated with all the properties deals.</p>
+                      <button class="btn btn-info"   data-toggle="modal" data-target="#">Login</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+      </form>
+	</div>
+
+
+	<!-- banner -->
+	<div class="container">
+	  <div class="properties-listing spacer">
+	{%if status==True%}
+
+		<h2>Your next Property (Last Updated: {{property['last-updated']}}) </h2>
+		<div id="owl-example" class="owl-carousel">
+		  <div class="properties">
+			<div class="image-holder"><img src="{{ url_for('static', filename='images/properties/1.jpg') }}" class="img-responsive" alt="properties"/>
+			  <div class="status sold">Sold</div>
+			</div>
+			<h4><a href="#">{{property['street']}}, {{property['city']}}, {{property['state']}}, {{property['zipcode']}}</a></h4>
+   		    <h4><a href="https://www.google.com/maps/@${{property['latitude']}},${{property['longitude']}}z">View Property on Map</a></h4>
+			<p class="price">Last 12 months: Low - ${{property['low']}} , High - ${{property['high']}}</p>
+			<p class="price">Price: ${{property['amount']}} -- ZEstimate: ${{property['zindexValue']}}</p>
+			<a class="btn btn-primary" href="{{property['graphsanddata']}}">View Property Details</a>
+			<a class="btn btn-primary" href="{{property['comparables']}}">View Comparables</a>
+			<a class="btn btn-primary" href="{{property['forSale']}}">View For Sale in Neighborhood</a>
+		  </div>
+	  {% endif %}
+		</div>
+	  </div>
+
+	  <div class="spacer">
+		<div class="row">
+		  <div class="col-lg-6 col-sm-9 recent-view">
+			<h3>About Us</h3>
+			<p>This is a webpage using the Zillow public APIs to get information about a propety.<br><a href="https://www.linkedin.com/in/vlbca/">Learn More</a></p>
+
+		  </div>
+
+		  {%if list|length > 1%}
+		  <div class="col-lg-5 col-lg-offset-1 col-sm-3 recommended">
+			<h3>Previous Search</h3>
+			<div id="myCarousel" class="carousel slide">
+			  <ol class="carousel-indicators">
+				  {% set count = 0 %}
+				  {%for item in list[:-1]%}
+				      {% if count ==0%}
+				  		<li data-target="#myCarousel" data-slide-to="{{count}}" class="active"></li>
+				      {% else %}
+				  		<li data-target="#myCarousel" data-slide-to="{{count}}" class=""></li>
+				      {% endif %}
+
+				  	  {% set count = count + 1 %}
+				  {% endfor %}
+			  </ol>
+
+			  <!-- Carousel items -->
+				<div class="carousel-inner">
+			  {% set count = 0 %}
+			  {%for item in list[:-1]%}
+
+				  {% if count ==0%}
+						<div class="item active">
+				  {% else %}
+						<div class="item">
+					{% endif %}
+				    <div class="row">
+					<div class="col-lg-4"><img src="" class="img-responsive" alt="properties"/></div>
+					<div class="col-lg-8">
+					  <h5><a href="{{item['graphsanddata']}}">View Property Details</a></h5>
+					  <p class="price">${{item['amount']}}</p>
+					  <a href="{{item['comparables']}}" class="more">View Comparables</a> </div>
+				  </div>
+				</div>
+
+				{% set count = count + 1 %}
+			  {% endfor %}
+				</div>
+			</div>
+		  </div>
+		  {% endif %}
+		</div>
+	  </div>
+
+	</div>
+{% endblock %}
+
