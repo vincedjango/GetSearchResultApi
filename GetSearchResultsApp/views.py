@@ -1,5 +1,4 @@
 #!flask/bin/python
-import requests
 from flask import render_template, request
 
 from GetSearchResultsApp import *
