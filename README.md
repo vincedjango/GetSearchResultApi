@@ -22,21 +22,20 @@ These instructions will get you a copy of the project up and running on your loc
 This Web Application was developed on Windows 7 with the latest Python V3.6.2
 
 Here a list of all Python packages installed:
-* certifi (2017.7.27.1)
-* chardet (3.0.4)
-* click (6.7)
-* Flask (0.12.2)
-* Flask-WTF (0.14.2)
-* itsdangerous (0.24)
-* Jinja2 (2.9.6)
-* MarkupSafe (1.0)
-* pip (9.0.1)
-* requests (2.18.3)
-* selenium (3.5.0)
-* setuptools (28.8.0)
-* urllib3 (1.22)
-* Werkzeug (0.12.2)
-* WTForms (2.1)
+* certifi==2017.7.27.1
+* chardet==3.0.4
+* click==6.7
+* Flask==0.12.2
+* Flask-WTF==0.14.2
+* gunicorn==19.7.1
+* idna==2.6
+* itsdangerous==0.24
+* Jinja2==2.9.6
+* MarkupSafe==1.0
+* requests==2.18.3
+* urllib3==1.22
+* Werkzeug==0.12.2
+* WTForms==2.1
 
 ### Installing
 
@@ -48,15 +47,11 @@ Here a list of all Python packages installed:
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Testing the browser with Selenium is not implemented and would be an important testing to add.
 
-### Break down into end to end tests
+To run the unittest, execute the GetSearchResultTest/unittest_api_zillow.py 
 
-Explain what these tests test and why
-
-```
-Give an example
-```
+I wrote only 2 unit tests testing the function parsing the response received from GetSearchResult Api.
 
 ## Authors
 

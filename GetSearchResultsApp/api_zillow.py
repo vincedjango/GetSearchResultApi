@@ -54,16 +54,20 @@ def get_property_info(address, city, state):
 # //______________________________________________________________________________
 # //------------------------------------------------------------------------------
 def parse_response(response):
-    xml_str = str(response.content,'utf-8')
-    tree = ElementTree.fromstring(xml_str)
+    dict_content = {}
 
-    dict_content={}
-    for child in tree:
-        if child.tag == "response":
-            items = child.getiterator()
-            for item in items:
-                if item.text is not None:
-                    dict_content[item.tag] = item.text
+    try:
+        xml_str = str(response.content,'utf-8')
+        tree = ElementTree.fromstring(xml_str)
+
+        for child in tree:
+            if child.tag == "response":
+                items = child.getiterator()
+                for item in items:
+                    if item.text is not None:
+                        dict_content[item.tag] = item.text
+    except AttributeError as e:
+        print(str(e))
 
     return dict_content
 
