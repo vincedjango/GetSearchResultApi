@@ -1,21 +1,25 @@
 # GetSearchResultApi
 
+### Heroku
+The application is deployed on [Heroku](https://flask-zillow.herokuapp.com/home).
+
+### Features
 Some of the features that appear on the main page have not been implemented:
 * Login
 * Caroussel for the previous search is not working properly
 * Search by Price Range and by Rent, Buy, Sale
-* A picture of the property, for the moment, it is just showing a static picture
+* The picture of the property, for the moment, it is just showing a static picture
 
 What was implemented is a search by (Addres, City, State). You can then see important information about the property.
 It is also possible to see the previous properties searched.
 
-###Here is the instruction received from Zillow:
+### Here is the instruction received from Zillow:
 
 Create a simple web app that allows a user to enter an address for a home and then see details for that home from Zillow's GetSearchResults API (API key: X1-ZWz1dyb53fdhjf_6jziz). The output should be a cleanly-displayed representation of whatever came back in the API. We're not testing your design skills here and so we're not looking for beauty, but at the same time, try to make it something you'd be proud to show friends and family. If the API responds with an error for some reason, the user should be informed and not left hanging.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
 ### Prerequisites
 
@@ -40,14 +44,16 @@ Here a list of all Python packages installed:
 ### Installing
 
 * [Python 3.6.2](https://www.python.org/downloads/) - Install Python 3.6
+* [Install Pycharm](https://www.jetbrains.com/pycharm/download/#section=windows) - A Python IDE, if you don't already have one
 * Install Flask by running the command - pip3 install Flask
 * Install requests by running the command - pip3 install requests
 * Install WTForms by running the command - pip3 install WTForms
-* [Install Pycharm](https://www.jetbrains.com/pycharm/download/#section=windows) - A Python IDE, if you don't already have one
+* Install requests by running the command - pip3 install gunicorn
+
 
 ## Running the tests
 
-Testing the browser with Selenium is not implemented and would be an important testing to add.
+Testing the browser with Selenium is not implemented and would be an important testing feature to add.
 
 To run the unittest, execute the GetSearchResultTest/unittest_api_zillow.py 
 
