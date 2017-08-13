@@ -4,14 +4,17 @@
 The application is deployed on [Heroku](https://flask-zillow.herokuapp.com/home).
 
 ### Features
+
+## Not Implemented
 Some of the features that appear on the main page have not been implemented:
 * Login
 * Caroussel for the previous search is not working properly
 * Search by Price Range and by Rent, Buy, Sale
 * The picture of the property, for the moment, it is just showing a static picture
 
-What was implemented is a search by (Addres, City, State). You can then see important information about the property.
-It is also possible to see the previous properties searched.
+## Implemented
+* A search by (Addres, City, State)
+* As soon as you search for a second property, the previous search will appear in the right bottom corner of your browser
 
 ### Here is the instruction received from Zillow:
 
