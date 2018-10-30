@@ -39,7 +39,7 @@ Here a list of all Python packages installed:
 * itsdangerous==0.24
 * Jinja2==2.9.6
 * MarkupSafe==1.0
-* requests==2.18.3
+* requests>=2.20.0
 * urllib3==1.22
 * Werkzeug==0.12.2
 * WTForms==2.1
