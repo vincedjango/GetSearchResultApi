@@ -32,7 +32,7 @@ Here a list of all Python packages installed:
 * certifi==2017.7.27.1
 * chardet==3.0.4
 * click==6.7
-* Flask==0.12.2
+* Flask>=0.12.3
 * Flask-WTF==0.14.2
 * gunicorn==19.7.1
 * idna==2.6
