@@ -16,9 +16,9 @@ Some of the features that appear on the main page have not been implemented:
 * A search by (Addres, City, State)
 * As soon as you search for a second property, the previous search will appear in the right bottom corner of your browser
 
-### Here is the instruction received from Zillow:
+### What is the goal of this application:
 
-Create a simple web app that allows a user to enter an address for a home and then see details for that home from Zillow's GetSearchResults API (API key: X1-ZWz1dyb53fdhjf_6jziz). The output should be a cleanly-displayed representation of whatever came back in the API. We're not testing your design skills here and so we're not looking for beauty, but at the same time, try to make it something you'd be proud to show friends and family. If the API responds with an error for some reason, the user should be informed and not left hanging.
+Create a simple web app that allows a user to enter an address for a home and then see details for that home from Zillow's GetSearchResults API (API key: X1-ZWz1dyb53fdhjf_6jziz). The output should be a cleanly-displayed representation of whatever came back in the API.
 
 ## Getting Started
 
@@ -35,12 +35,12 @@ Here a list of all Python packages installed:
 * Flask>=0.12.3
 * Flask-WTF==0.14.2
 * gunicorn==19.7.1
-* idna==2.6
 * itsdangerous==0.24
 * Jinja2==2.9.6
 * MarkupSafe==1.0
 * requests>=2.20.0
-* urllib3==1.22
+* selenium==3.5.0
+* urllib3>=1.23
 * Werkzeug==0.12.2
 * WTForms==2.1
 
